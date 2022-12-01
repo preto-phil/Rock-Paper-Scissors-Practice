@@ -1,8 +1,8 @@
-
+// Global variables
 
 let computerSelection;
+let playerSelection;
 
-let computerSelectionDisplay = document.getElementById("computerSelectionDisplay");
 
 // Generate computer choice function
 
@@ -13,17 +13,43 @@ function getComputerSelection() {
 
     // allocate random number to specific choice of RPS
     if (randomNumber === 0) {
-        computerSelection = 'Rock';
-        console.log(computerSelection);
+        computerSelection = 'ROCK';
+        console.log(("Computer choice: " + computerSelection));
     }
     if (randomNumber === 1) {
-        computerSelection = 'Paper';
-        console.log(computerSelection);
+        computerSelection = 'PAPER';
+        console.log(("Computer choice: " + computerSelection));
     }
     if (randomNumber === 2) {
-        computerSelection = 'Scissors';
-        console.log(computerSelection);
+        computerSelection = 'SCISSORS';
+        console.log(("Computer choice: " + computerSelection));
     }
 } 
 
-function playRound(computerSelection, playerSelection)
+
+function playRound() {
+    
+    getComputerSelection();
+    
+    if ( playerSelection === 'ROCK' && computerSelection === 'PAPER' || playerSelection === 'PAPER' && computerSelection === 'SCISSORS' || playerSelection === 'SCISSORS' && computerSelection === 'ROCK' ) {
+        return "You lose!";
+    }
+    if (playerSelection === 'ROCK' && computerSelection === 'SCISSORS' || playerSelection === 'PAPER' && computerSelection === 'ROCK' || playerSelection === 'SCISSORS' && computerSelection === 'PAPER' ) {
+        return "You Win!";
+    }
+    if (playerSelection === 'ROCK' && computerSelection === 'ROCK' || playerSelection === 'PAPER' && computerSelection === 'PAPER' || playerSelection === 'SCISSORS' && computerSelection === 'SCISSORS' ) {
+        return "You Draw!";
+    }
+
+}
+
+// Player selection section
+
+playerSelection = prompt('ROCK, PAPER, or SCISSORS?');
+playerSelection = playerSelection.toUpperCase();
+console.log("Player Choice: " + playerSelection);
+
+// Call playRound function to play a round
+
+console.log(playRound(playerSelection, computerSelection));
+

@@ -45,11 +45,44 @@ function playRound() {
 
 // Player selection section
 
-playerSelection = prompt('ROCK, PAPER, or SCISSORS?');
-playerSelection = playerSelection.toUpperCase();
-console.log("Player Choice: " + playerSelection);
 
-// Call playRound function to play a round
 
-console.log(playRound(playerSelection, computerSelection));
+//// Call playRound function to play a round
 
+// console.log(playRound(playerSelection, computerSelection));
+
+// Game
+
+function game() {
+
+
+
+    // Write a loop function
+
+    for (i = 0; i < 5; i++) {
+        
+        playerSelection = prompt('ROCK, PAPER, or SCISSORS?');
+        playerSelection = playerSelection.toUpperCase();
+        console.log("Player Choice: " + playerSelection);
+        
+        console.log(playRound(playerSelection, computerSelection));        
+    }
+
+
+    
+    // console.log(playRound(playerSelection, computerSelection));
+}
+
+console.log(game());
+
+// console.log("Score = " + score);
+
+//// Score holder
+
+// Starts with both scores = 0
+
+// if player win - player score i++
+
+// if computer win - computer score i++
+
+// if draw - score stays the same

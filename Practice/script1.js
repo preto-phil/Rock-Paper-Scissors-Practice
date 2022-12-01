@@ -1,26 +1,29 @@
 
 
-let computerChoice;
+let computerSelection;
 
-let computerChoiceDisplay = document.getElementById("computerChoiceDisplay");
+let computerSelectionDisplay = document.getElementById("computerSelectionDisplay");
 
 // Generate computer choice function
 
-function getComputerChoice() {
+function getComputerSelection() {
     
     // generate random number
     let randomNumber = Math.floor(Math.random() * 3);
 
     // allocate random number to specific choice of RPS
     if (randomNumber === 0) {
-        computerChoice = 'Rock';
+        computerSelection = 'Rock';
+        console.log(computerSelection);
     }
     if (randomNumber === 1) {
-        computerChoice = 'Paper';
+        computerSelection = 'Paper';
+        console.log(computerSelection);
     }
     if (randomNumber === 2) {
-        computerChoice = 'Scissors';
+        computerSelection = 'Scissors';
+        console.log(computerSelection);
     }
-    computerChoiceDisplay.innerHTML = computerChoice;
 } 
 
+function playRound(computerSelection, playerSelection)

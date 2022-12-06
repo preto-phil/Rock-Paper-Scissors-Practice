@@ -63,6 +63,15 @@ function game() {
         
         playerSelection = prompt('ROCK, PAPER, or SCISSORS?');
         playerSelection = playerSelection.toUpperCase();
+
+        // If not rock paper or scissors ask prompt again
+
+        if (playerSelection != 'ROCK' || playerSelection != 'PAPER' || playerSelection != 'SCISSORS') {
+            alert("Try again please.");
+            playerSelection = prompt('ROCK, PAPER, or SCISSORS?');
+            playerSelection = playerSelection.toUpperCase();
+        }
+
         console.log("Player Choice: " + playerSelection);
         
         console.log(playRound(playerSelection, computerSelection));        

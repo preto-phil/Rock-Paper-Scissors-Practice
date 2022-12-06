@@ -40,7 +40,14 @@ html, body {
 
 .buttons-block {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+}
+
+.choiceButtons {
+    display: flex;
+    flex-direction: row;
 }
 
 button {

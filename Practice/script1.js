@@ -1,4 +1,3 @@
-// Global variables
 
 let computerSelection;
 let playerSelection;
@@ -26,8 +25,6 @@ function getComputerSelection() {
     }
 } 
 
-
-
 function playRound() {
     
     getComputerSelection();
@@ -48,7 +45,17 @@ function playRound() {
 
 }
 
-
+function selection() {
+    playerSelection = prompt('ROCK, PAPER, or SCISSORS?');
+    playerSelection = playerSelection.toUpperCase();
+    
+    if (playerSelection == 'ROCK' || playerSelection == 'PAPER' || playerSelection == 'SCISSORS')  {
+        return playerSelection;
+    } else { 
+        alert("Try again please.");
+        return selection();
+    }
+}
 
 function game() {
 
@@ -57,16 +64,7 @@ function game() {
         round = round + 1;
         console.log("Round: " + round);
         
-        playerSelection = prompt('ROCK, PAPER, or SCISSORS?');
-        playerSelection = playerSelection.toUpperCase();
-
-        // If not rock paper or scissors ask prompt again
-
-        // if (playerSelection != 'ROCK' || playerSelection != 'PAPER' || playerSelection != 'SCISSORS') {
-            // alert("Try again please.");
-            // playerSelection = prompt('ROCK, PAPER, or SCISSORS?');
-            // playerSelection = playerSelection.toUpperCase();
-        // }
+        selection();
 
         console.log("Player Choice: " + playerSelection);
                

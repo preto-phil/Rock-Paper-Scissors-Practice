@@ -2,12 +2,9 @@
 
 let computerSelection;
 let playerSelection;
-let result;
-let computerWin;
+let round = 0;
 let computerScore = 0;
-let playerWin;
 let playerScore = 0;
-let draw;
 
 
 
@@ -36,16 +33,17 @@ function playRound() {
     getComputerSelection();
     
     if ( playerSelection === 'ROCK' && computerSelection === 'PAPER' || playerSelection === 'PAPER' && computerSelection === 'SCISSORS' || playerSelection === 'SCISSORS' && computerSelection === 'ROCK' ) {
-        result = computerWin;
-        return "You lose!";
+        computerScore = computerScore + 1;
+        return "You lose the round!";
     }
+    
     if (playerSelection === 'ROCK' && computerSelection === 'SCISSORS' || playerSelection === 'PAPER' && computerSelection === 'ROCK' || playerSelection === 'SCISSORS' && computerSelection === 'PAPER' ) {
-        result = playerWin;
-        return "You Win!";
+        playerScore = playerScore + 1;
+        return "You win the round!";
     }
+    
     if (playerSelection === 'ROCK' && computerSelection === 'ROCK' || playerSelection === 'PAPER' && computerSelection === 'PAPER' || playerSelection === 'SCISSORS' && computerSelection === 'SCISSORS' ) {
-        result = draw;
-        return "You Draw!";
+        return "It's a draw!";
     }
 
 }
@@ -55,6 +53,9 @@ function playRound() {
 function game() {
 
     for (i = 0; i < 5; i++) {
+        
+        round = round + 1;
+        console.log("Round: " + round);
         
         playerSelection = prompt('ROCK, PAPER, or SCISSORS?');
         playerSelection = playerSelection.toUpperCase();
@@ -69,50 +70,20 @@ function game() {
 
         console.log("Player Choice: " + playerSelection);
                
-        if (result === playerWin) {
-            playerScore = playerScore + 1;
-        }
-
+        console.log(playRound());   
+              
         console.log("Player Score: " + playerScore);
-
-        if (result === computerWin) {
-            computerScore = computerScore + 1;
-        }
-
+        
         console.log("Computer Score: " + computerScore);
-
-        console.log(playRound());        
+        
     }
-
-
-    
-    // console.log(playRound(playerSelection, computerSelection));
+    if (computerScore > playerScore ) {
+        console.log("You lose the game!")
+    } else if ( computerScore < playerScore ) {
+        console.log("You win the game!")
+    } else {
+        console.log("You've drawn the game!")
+    }
 }
 
 console.log(game());
-
-// console.log("Score = " + score);
-
-//// Score holder
-
-// Starts with both scores = 0
-
-// if player win - player score i++
-
-/* 
-
-if (result === playerWin) {
-    playerScore = playerScore + 1;
-    console.log(playerScore);
-}
-
-// if computer win - computer score i++
-
-if (result === computerWin) {
-    computerScore = computerScore + 1;
-    console.log(computerScore);
-}
-
-// if draw - score stays the same
-
-*/

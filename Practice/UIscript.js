@@ -1,32 +1,21 @@
 
-//////////////
+//// create variable linked to button with event listeners - 
 
-//// create variable linked to button
+const rockButton = document.getElementById('Rock').addEventListener('click', playRound());
 
-const rockButton = document.querySelector('#Rock');
+//const paperButton = document.getElementById('Paper').addEventListener('click', playRound());
 
-const paperButton = document.querySelector('#Paper');
+//const scissorsButton = document.getElementById('Scissors').addEventListener('click', playRound());
 
-const scissorsButton = document.querySelector('#Scissors');
-
-
-//// Create event listeners added to buttons
-
-rockButton.addEventListener('click', playRound());
-
-paperButton.addEventListener('click', playRound());
-
-scissorsButton.addEventListener('click', playRound());
-
-
-/*
 
 /////////////////////
 
-let playerSelection = document.querySelectorAll('button');
+//let playerSelection = document.querySelectorAll('button');
 
 
-//////////////////////
+/////////////////////
+
+/*
 
 
 document.getElementsByName('button').onclick = function() {
@@ -36,7 +25,7 @@ document.getElementsByName('button').onclick = function() {
 
 */
 
-//////////////////////
+//// Create function that randomly selects RPS - Completed
 
 function getComputerSelection() {  
     let myArray = ['Rock', 'Paper', 'Scissors'];
@@ -45,7 +34,7 @@ function getComputerSelection() {
     return computerSelection;
 } 
 
-//////////////////////
+//// Create a function that plays a round of RPS - Incomplete
 
 function playRound() {
     
@@ -67,7 +56,7 @@ function playRound() {
     }
     */
 
-    console.log("Computer choice:" + getComputerSelection());
+    console.log("Computer choice: " + getComputerSelection());
 }
 
 

@@ -22,16 +22,28 @@ html, body {
     padding: 20px;
 }
 
-.computer {
-
+.middle-block {
+    display: flex;
+    flex-direction: row;
+    padding: 50px;
 }
 
-.player {
-    
+.computer-block {
+    display: flex;
+    padding: 50px;
+    flex-direction: column;
 }
 
-.result {
-    
+.player-block {
+    display: flex;
+    padding: 50px;
+    flex-direction: column;
+}
+
+.result-block {
+    display: flex;
+    padding: 50px;
+    flex-direction: column;
 }
 
 .score {

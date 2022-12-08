@@ -6,9 +6,11 @@ let computerDisplay = document.getElementById('computerChoiceDisplay');
 let result = document.getElementById('resultDisplay');
 let playerScore = document.getElementById('playerScoreDisplay');
 let computerScore = document.getElementById('computerScoreDisplay');
+let roundDisplay = document.getElementById('roundDisplay');
 
 let playerChoice;
 let computerSelection;
+let round = 0
 
 // Generate random computer choice
 
@@ -41,6 +43,10 @@ let playerSelection = document.querySelectorAll('button');
 // Create function that when buttons presses shit goes down
 
 playerSelection.forEach(playerSelection => playerSelection.addEventListener('click', (playRound) => {
+    round = round + 1;
+    roundDisplay.innerHTML = round;
+    console.log("Round: " + round);
+    
     playerChoice = playRound.target.id;
     playerDisplay.innerHTML = playerChoice;
     console.log("Player choice: " + playerChoice);

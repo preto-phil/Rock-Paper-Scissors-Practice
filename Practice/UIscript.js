@@ -19,6 +19,21 @@ function getComputerChoice() {
     return computerSelection;
 }
 
+// Create function that determines win, lose or draw
+
+function getResult() {
+    if (playerChoice == 'Rock' && computerSelection == 'Scissors' || playerChoice == 'Paper' && computerSelection == 'Rock' || playerChoice == 'Scissors' && computerSelection == 'Paper') {
+        console.log("You win this round!");
+        result.innerHTML = "You win this round!";
+    } else if (playerChoice == computerSelection) {
+        console.log("You draw this round!");
+        result.innerHTML = "You draw this round!";
+    } else {
+        console.log("You lose this round!");
+        result.innerHTML = "You lose this round!";
+    }
+}
+
 // Link buttons to Javascript code
 
 let playerSelection = document.querySelectorAll('button');
@@ -37,9 +52,3 @@ playerSelection.forEach(playerSelection => playerSelection.addEventListener('cli
     getResult();
 
 }))
-
-// Create function that determines win, lose or draw
-
-function getResult() {
-    
-}

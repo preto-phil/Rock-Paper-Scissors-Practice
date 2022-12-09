@@ -7,6 +7,7 @@ let result = document.getElementById('resultDisplay');
 let playerScore = document.getElementById('playerScoreDisplay');
 let computerScore = document.getElementById('computerScoreDisplay');
 let roundDisplay = document.getElementById('roundDisplay');
+let endResult = document.getElementById('endResult');
 
 let playerChoice;
 let computerSelection;
@@ -74,9 +75,11 @@ playerSelection.forEach(playerSelection => playerSelection.addEventListener('cli
     }
     if (userScore === 5) {
         console.log("You are the Champion!");
+        endResult.innerHTML = "You are the Champion!";
     }
     if (cpuScore === 5) {
         console.log("You are the Loser!");
+        endResult.innerHTML = "You are the Loser!";
     }
 }))
  

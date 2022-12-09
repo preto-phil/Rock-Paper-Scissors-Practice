@@ -48,27 +48,35 @@ let playerSelection = document.querySelectorAll('button');
 // Create function that when buttons presses shit goes down
 
 playerSelection.forEach(playerSelection => playerSelection.addEventListener('click', (playRound) => {
-    round = round + 1;
-    roundDisplay.innerHTML = round;
-    console.log("Round: " + round);
+
+    if (cpuScore < 5 && userScore < 5 ) {
+        
+        round = round + 1;
+        roundDisplay.innerHTML = round;
+        console.log("Round: " + round);
+        
+        playerChoice = playRound.target.id;
+        playerDisplay.innerHTML = playerChoice;
+        console.log("Player choice: " + playerChoice);
+            
+        getComputerChoice();
+        computerDisplay.innerHTML = computerSelection;
+        console.log("Computer choice: " + computerSelection);
     
-    playerChoice = playRound.target.id;
-    playerDisplay.innerHTML = playerChoice;
-    console.log("Player choice: " + playerChoice);
-        
-    getComputerChoice();
-    computerDisplay.innerHTML = computerSelection;
-    console.log("Computer choice: " + computerSelection);
+        getResult();
+    
+        console.log(`Player Score: ${userScore}`);
+        playerScore.innerHTML = userScore;
+    
+        console.log(`Computer Score: ${cpuScore}`);
+        computerScore.innerHTML = cpuScore
 
-    getResult();
-
-    console.log(`Player Score: ${userScore}`);
-    playerScore.innerHTML = userScore;
-
-    console.log(`Computer Score: ${cpuScore}`);
-    computerScore.innerHTML = cpuScore
-
-    if ( cpuScore === 5 || userScore === 5 ) {
-        
+    }
+    if (userScore === 5) {
+        console.log("You are the Champion!");
+    }
+    if (cpuScore === 5) {
+        console.log("You are the Loser!");
     }
 }))
+ 

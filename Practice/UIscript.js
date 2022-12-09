@@ -10,7 +10,10 @@ let roundDisplay = document.getElementById('roundDisplay');
 
 let playerChoice;
 let computerSelection;
-let round = 0
+let round = 0;
+let cpuScore = 0;
+let userScore = 0;
+
 
 // Generate random computer choice
 
@@ -27,12 +30,14 @@ function getResult() {
     if (playerChoice == 'Rock' && computerSelection == 'Scissors' || playerChoice == 'Paper' && computerSelection == 'Rock' || playerChoice == 'Scissors' && computerSelection == 'Paper') {
         console.log("You win this round!");
         result.innerHTML = "You win this round!";
+        userScore = userScore + 1;
     } else if (playerChoice == computerSelection) {
         console.log("You draw this round!");
         result.innerHTML = "You draw this round!";
     } else {
         console.log("You lose this round!");
         result.innerHTML = "You lose this round!";
+        cpuScore = cpuScore + 1;
     }
 }
 
@@ -57,4 +62,13 @@ playerSelection.forEach(playerSelection => playerSelection.addEventListener('cli
 
     getResult();
 
+    console.log(`Player Score: ${userScore}`);
+    playerScore.innerHTML = userScore;
+
+    console.log(`Computer Score: ${cpuScore}`);
+    computerScore.innerHTML = cpuScore
+
+    if ( cpuScore === 5 || userScore === 5 ) {
+        
+    }
 }))
